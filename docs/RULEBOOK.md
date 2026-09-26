@@ -26,7 +26,11 @@ agent MUST stop and ask the user rather than guessing.
 | Employment Start Date | June 2025 |
 | Total Experience | ~1 year (as of Sept 2026) |
 | Current CTC (fixed, excl. ESOPs/bonus) | ₹3.6 LPA |
-
+| 10th class % | 70% |
+| 12th class % | 65.8% |
+| Graduation CGPA | 7.47 CGPA (convert to % if a form demands it: 7.47 × 10 = ~74.7%) |
+| Postal Code (Mohali) | 160055 |
+| Address (if a form asks) | Mohali, Punjab, India – 160055 |
 ---
 
 ## 2. Domain & Stack — What to Apply For
@@ -45,9 +49,9 @@ OpenAI/Anthropic/Gemini API integration.
 5. Python Developer
 6. React/Frontend Developer (only if 1-3 yrs range, not senior)
 
-**Acceptable experience range:** 0–3 years listed requirement.
-(1–2 years over-requirement is still worth applying to; skip anything asking
-for 4+ years mandatory, or explicitly "Senior".)
+**Acceptable experience range:** 0–2 years listed requirement.
+(1 years over-requirement is still worth applying to; skip anything asking
+for 2+ years mandatory, or explicitly "Senior".)
 
 **Hard skip / auto-reject criteria** (agent must NOT apply, just log under
 "Skipped — Not a Fit" with reason):
