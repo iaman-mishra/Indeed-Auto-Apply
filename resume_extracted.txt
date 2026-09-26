@@ -1,0 +1,74 @@
+Aman Mishra
+Email: amanmishra.5272@gmail.com
+Linkedin: iamanmishra
+Mobile:
++91-8851225097
+Github: iaman-mishra
+Location: Mohali, India
+Education
+IIMT College Of Engineering
+Greater Noida, India
+Bachelor of Technology – Computer Science Engineering
+2021 – 2025
+Sanfort World School
+Greater Noida, India
+Higher Secondary
+2020 – 2021
+Delhi Scottish School
+Greater Noida, India
+Matriculation
+2018 – 2019
+Technical Skills
+Languages
+Python, JavaScript, SQL, TypeScript
+Frontend
+React.js, Next.js, HTML, CSS
+Backend
+FastAPI, Node.js, Express.js, NestJS, REST APIs
+Databases
+PostgreSQL, MongoDB, Redis, Qdrant, pgVector
+DevOps
+Docker, Docker Compose, Linux, AWS (S3, EC2, RDS, ECR), CI/CD
+AI & Automation LangChain, LangGraph, RAG, LLM Agents, Prompt Engineering, MCP, n8n, Ope-
+nAI API, Anthropic (Claude) API, Google Gemini API
+Experience
+75Way Technologies Pvt Ltd
+Mohali, Punjab
+Associate Software Development Engineer
+June 2025 – Present
+◦Full Stack Development: Built and deployed 5+ production-grade applications using FastAPI, React.js, Node.js, Next.js
+and REST APIs, serving 5000+ users.
+◦Performance Optimization: Improved frontend performance by 30% through component optimization and efficient state
+management.
+◦Code Quality: Led 20+ code reviews, reducing code duplication by 35% and improving maintainability.
+◦AI Workflow Automation: Designed and implemented AI-driven workflows using n8n for automating data processing
+and system integrations, reducing manual effort by over 80%.
+Projects
+ReviewBytes: AI-first, Gamified Medical Education Platform
+Feb 2026 – Present
+75Way Technologies
+◦Tech Stack: FastAPI, PostgreSQL, SQLAlchemy, Alembic, n8n, Docker, Redis, LangChain
+◦AI Content Pipeline: Designed and implemented an end-to-end LLM-powered content generation pipeline — ingesting
+raw text from OneNote via n8n, applying automated validation, error detection, and patching workflows, storing 10k+
+structured documents in a hierarchical PostgreSQL schema.
+◦BytesAI Chat Agent: Built a domain-constrained multi-agent AI system using LangChain with session orchestration,
+context-aware Q&A, and personalized recommendations; implemented RAG pipeline with pgVector for semantic retrieval.
+◦Caching & Performance: Redis caching with TTL strategies reduced DB load by 40–60% and improved API response
+times by up to 2x.
+◦DevOps & Deployment: Dockerized multi-service architecture with GitHub Actions CI/CD pipelines for automated
+deployment to AWS EC2.
+Greenroom: Social Media Platform for Athletes
+Oct 2025 – Jan 2026
+75Way Technologies
+◦Tech Stack: Node.js, React.js, PostgreSQL, Prisma, Docker, Redis
+◦Full Stack Development: Built and enhanced 10+ user-facing features across frontend and backend using React.js and
+Node.js in production.
+◦Large File Upload Optimization: Chunk-based video upload system using AWS S3 pre-signed URLs, enabling reliable
+large media handling and eliminating API timeout issues.
+◦Authentication & Security: Implemented access and refresh token-based authentication for secure session management
+and protected API access.
+◦Performance Optimization: Optimized frontend rendering and backend queries, improving load times by 20%.
+Certifications
+AWS Cloud Practitioner Certification – Self Paced: GFG
+Oracle Cloud Infrastructure 2024 Certified Foundations Associate: Oracle
+Cybersecurity Essentials: Cisco
