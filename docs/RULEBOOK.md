@@ -14,6 +14,8 @@ agent MUST stop and ask the user rather than guessing.
 | Email | amanmishra.5272@gmail.com |
 | Phone | +91-8851225097 |
 | Current Location | Mohali, Punjab, India |
+| Hometown (birthplace) | Pratapgarh, Uttar Pradesh |
+| Grew up / brought up in | Noida, Uttar Pradesh |
 | LinkedIn | linkedin.com/in/iamanmishra |
 | GitHub | github.com/iaman-mishra |
 | Highest Education | B.Tech, Computer Science Engineering, IIMT College of Engineering, Greater Noida (2021–2025) |
@@ -24,13 +26,14 @@ agent MUST stop and ask the user rather than guessing.
 | Current Employer | 75Way Technologies Pvt Ltd |
 | Current Role | Associate Software Development Engineer |
 | Employment Start Date | June 2025 |
-| Total Experience | ~1 year (as of Sept 2026) |
+| Total Experience | ~1 year 3 months (as of Sept 2026) |
 | Current CTC (fixed, excl. ESOPs/bonus) | ₹3.6 LPA |
 | 10th class % | 70% |
 | 12th class % | 65.8% |
 | Graduation CGPA | 7.47 CGPA (convert to % if a form demands it: 7.47 × 10 = ~74.7%) |
 | Postal Code (Mohali) | 160055 |
 | Address (if a form asks) | Mohali, Punjab, India – 160055 |
+
 ---
 
 ## 2. Domain & Stack — What to Apply For
@@ -45,9 +48,26 @@ OpenAI/Anthropic/Gemini API integration.
 1. Full Stack Developer / Engineer
 2. Backend Developer (Python or Node.js)
 3. AI/GenAI Engineer / AI Full-Stack Engineer
-4. MERN Stack Developer
-5. Python Developer
-6. React/Frontend Developer (only if 1-3 yrs range, not senior)
+4. Forward Deployed Engineer (FDE) / AI Solutions Engineer — customer-facing
+   AI implementation roles; strong fit given hands-on LangChain/RAG/agent
+   experience even without "FDE" title history
+5. MERN Stack Developer
+6. Python Developer
+7. React/Frontend Developer (only if 1-3 yrs range, not senior)
+8. Team Lead / Tech Lead (Software Development) — apply even though current
+   experience (~1 yr) is below typical Team Lead expectations (usually 3-5+
+   yrs), UNLESS the JD explicitly gates on years of people-management
+   experience as a hard requirement (see Section 2 "Acceptable experience
+   range" note below for how to judge this)
+
+**Note on Team Lead / FDE roles specifically:**
+- **Forward Deployed Engineer**: this is a strong genuine fit — FDE roles
+  value hands-on AI/LLM integration, RAG, agent-building, and
+  customer-facing technical delivery, which lines up well with existing
+  experience (BytesAI, LangChain agent work, n8n automation). Apply
+  normally, do not treat the "1+ years experience only" gap as a blocker
+  unless the JD explicitly demands 3+ years AND frames it as a hard filter.
+
 
 **Acceptable experience range:** 0–2 years listed requirement.
 (1 years over-requirement is still worth applying to; skip anything asking
@@ -149,7 +169,10 @@ tweak (agent may lightly adapt wording to match company name/role name).
 | Why do you want to join us / this role | Generate a 2–4 sentence tailored answer referencing 2–3 specific things from the JD (tech stack overlap, company mission/domain, growth stage) + tie back to Aman's LangChain/RAG/full-stack experience. Never copy-paste a generic answer verbatim across companies — must reference the specific company name and domain. |
 | Why should we hire you / what makes you a fit | Reference: production experience shipping 5+ apps serving 5000+ users, RAG/LangChain agent system (BytesAI), Redis caching that cut DB load 40-60%, ownership mindset, fast learner. |
 | Current location | Mohali, Punjab |
+| Hometown / native place | Pratapgarh, Uttar Pradesh (birthplace — use this specifically when a form asks "hometown" or "native place", NOT current location) |
+| Where did you grow up / brought up | Noida, Uttar Pradesh (use this if a form specifically asks where you were raised/grew up, distinct from "hometown") |
 | Willing to relocate | Yes, if role is a strong fit and city is within India. No, only if user has explicitly restricted a given run to "local only". |
+| Available for offline / in-person / face-to-face interview | **Do NOT default to "Yes" blindly.** Apply this logic: (1) If the job's city is Mohali, Chandigarh, Noida, or Delhi NCR (i.e. reachable within a day trip from current location) → Yes. (2) If the job's city is far (Bangalore, Pune, Hyderabad, Chennai, Ahmedabad, Mumbai, etc.) → answer "Yes, with advance notice to arrange travel" if the form allows free text, or select "Yes" only if the user has separately confirmed willingness for that specific far-city role — otherwise select **"No" / "Prefer virtual interview"** if that option exists, or flag as "Paused — Needs Input" if the form forces a binary Yes/No with no nuance and the city is far. Never silently commit to an in-person interview in a city that isn't reachable practically. |
 | Willing to work onsite / WFO | Yes, unless user says otherwise for a specific run. |
 | Immediate joiner? | No — 30 days notice. If asked "can you join in X days" and X ≥ 30, answer Yes. |
 | Legally authorized to work in India | Yes |
@@ -164,6 +187,36 @@ tweak (agent may lightly adapt wording to match company name/role name).
 | UAN / PF number | Ask user directly — not stored here yet. If field is optional, skip. If mandatory and unknown, flag in log for user follow-up rather than guessing. |
 | Portfolio / personal website | https://iamanmishra.vercel.app/ |
 | GitHub repo link for "best project" | github.com/iaman-mishra (point to ReviewBytes or Greenroom write-up per JD relevance; do not fabricate public repo links that don't exist) |
+
+---
+
+## 4a. Indeed "Screener Gate" Policy — "It looks like you don't meet these
+employer requirements" / "Apply anyway" intervention
+
+Indeed sometimes shows a hard-stop screen listing the employer's stated
+minimums (e.g. "Node.js: 3 years (Required)") after you answer its
+screener questions, with two options: "Return to job search" or "Apply
+anyway". Use this policy instead of pausing every time:
+
+- **Use "Apply anyway" and submit** when the gap is a **soft/experience-year
+  mismatch** you can reasonably argue around in an interview — i.e. the
+  gate is about years of experience in a skill you do genuinely have
+  (Node.js, SQL, Python, React, etc.), even if the number is higher than
+  your literal years (e.g. they want 3, you have ~1–1.5 years but strong
+  hands-on production work). Apply anyway in these cases — do NOT pause.
+- **Skip / pause and ask the user** only when the gate is a **hard factual
+  mismatch that can't be argued around in an interview** — specifically:
+  - A location gate requiring you to *already* live in a specific city you
+    don't live in (not just "willing to relocate" — an actual current-
+    residence check).
+  - A citizenship/visa/work-authorization gate you don't meet.
+  - A hard minimum total experience gate that's more than double your
+    actual total experience (e.g. they require 5+ years and you have ~1).
+  - Anything else that isn't a skill-years soft gate as described above.
+- When in doubt between these two cases, default to **"Apply anyway"** —
+  most of these gates are soft filters employers set generically and don't
+  strictly enforce, and the cost of trying is low. Only pause for the
+  narrow hard-mismatch cases above.
 
 ---
 

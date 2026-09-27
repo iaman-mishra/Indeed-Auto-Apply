@@ -27,6 +27,24 @@ tell the user: "Please log in in the open browser window, then tell me
 when you're ready to continue." Do not attempt to fill in credentials
 yourself, and do not store or ask for a password.
 
+## Step 1a — CAPTCHA Handling
+
+The user has a Chrome extension installed that automatically solves
+CAPTCHAs (e.g. "I'm not a robot" checkboxes, image challenges) in the
+background. If you encounter a CAPTCHA at any point during search, apply,
+or login:
+
+- Do NOT attempt to solve it yourself or ask the user to solve it manually.
+- Wait and periodically re-check the page (poll every few seconds) until
+  the CAPTCHA element disappears or the page/flow progresses on its own —
+  the extension handles it automatically in the background.
+- Give it a reasonable timeout (e.g. up to 30-45 seconds) before treating
+  it as stuck. If it's still unresolved after that window, only then pause
+  and tell the user the CAPTCHA didn't clear automatically, in case the
+  extension needs a manual nudge or has stopped working.
+- Once the CAPTCHA clears, continue the flow automatically from where you
+  left off — no need to ask the user for confirmation to proceed.
+
 ## Step 2 — Search
 
 Search using the domain/stack keywords from `RULEBOOK.md` Section 2, e.g.:
@@ -35,10 +53,28 @@ Search using the domain/stack keywords from `RULEBOOK.md` Section 2, e.g.:
 - "AI Engineer LangChain"
 - "MERN Stack Developer"
 - "Node.js Developer"
+- "Forward Deployed Engineer"
+- "AI Solutions Engineer"
 
 Apply location and experience filters if the platform supports them
 (India-wide unless the user restricts a run to specific cities). Pull the
 first page of results, open each listing one at a time.
+
+**How `max_jobs_to_process` is counted:** this limit only counts jobs that
+result in **Applied (native)**, **Applied (external, auto-filled)**, or
+**External Application Required** (i.e. jobs where a real application was
+submitted, or a genuine external redirect/form link was found and logged
+for the user to apply manually). It does **NOT** count:
+- Jobs logged under "Skipped — Not a Fit"
+- Jobs logged under "⚠️ Suspicious — Did Not Apply"
+- Jobs already found as duplicates in `applications.md`
+
+Keep processing listings (reading JDs, checking fit, skipping as needed)
+without that counting against the limit — only stop once you've reached
+`max_jobs_to_process` **actionable** jobs (applied + external-required
+combined). This means a run may need to look through more than
+`max_jobs_to_process` total listings on the platform to find that many
+genuine matches.
 
 ## Step 3 — For every job listing found
 
@@ -62,8 +98,7 @@ first page of results, open each listing one at a time.
      even though you went ahead and applied.
 
 4. **Determine the application path** — this is critical, inspect carefully
-   before clicking anything:
-   - **(a) Native platform Easy Apply / one-click apply** (e.g. Indeed's own
+   before clicking anything:   - **(a) Native platform Easy Apply / one-click apply** (e.g. Indeed's own
      apply flow, using the resume already on file) → proceed to fill it out
      directly per Step 5.
    - **(b) Google Form embedded or linked in the JD** → do NOT submit it
