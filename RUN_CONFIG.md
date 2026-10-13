@@ -4,7 +4,7 @@ Edit these before starting a run. The agent reads this file fresh every
 session — it does NOT persist changes back into RULEBOOK.md.
 
 ```yaml
-platform: glassdoor                # indeed | linkedin | naukri | other (name it)
+platform: indeed                # indeed | linkedin | naukri | other (name it)
 target_cities: []  # empty [] = no city restriction
 max_jobs_to_process: 50         # stop after processing this many listings this run
 auto_fill_external_forms: false # true = agent will also fill Google Forms / career-site

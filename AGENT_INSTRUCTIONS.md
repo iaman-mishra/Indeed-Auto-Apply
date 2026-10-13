@@ -56,9 +56,10 @@ Search using the domain/stack keywords from `RULEBOOK.md` Section 2, e.g.:
 - "Forward Deployed Engineer"
 - "AI Solutions Engineer"
 
-Apply location and experience filters if the platform supports them
-(India-wide unless the user restricts a run to specific cities). Pull the
-first page of results, open each listing one at a time.
+Apply location and experience filters strictly on the platform:
+- **Experience filter (CRITICAL)**: Always apply the 0–2 years filter (Entry level / 1–2 yrs). Do NOT browse unfiltered listings, because applying to 3–5+ year positions degrades the application match score on platforms like Naukri (e.g. dropping experience match to 45%) and causes ATS rejections.
+- **Location filter**: India-wide unless the user restricts a run to specific cities in `RUN_CONFIG.md`.
+Pull the first page of filtered results, open each listing one at a time.
 
 **How `max_jobs_to_process` is counted:** this limit only counts jobs that
 result in **Applied (native)**, **Applied (external, auto-filled)**, or

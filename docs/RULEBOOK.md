@@ -33,6 +33,7 @@ agent MUST stop and ask the user rather than guessing.
 | Graduation CGPA | 7.47 CGPA (convert to % if a form demands it: 7.47 × 10 = ~74.7%) |
 | Postal Code (Mohali) | 160055 |
 | Address (if a form asks) | Mohali, Punjab, India – 160055 |
+| Date of Birth | 21/09/2004 |
 
 ---
 
@@ -175,6 +176,7 @@ tweak (agent may lightly adapt wording to match company name/role name).
 | Available for offline / in-person / face-to-face interview | **Do NOT default to "Yes" blindly.** Apply this logic: (1) If the job's city is Mohali, Chandigarh, Noida, or Delhi NCR (i.e. reachable within a day trip from current location) → Yes. (2) If the job's city is far (Bangalore, Pune, Hyderabad, Chennai, Ahmedabad, Mumbai, etc.) → answer "Yes, with advance notice to arrange travel" if the form allows free text, or select "Yes" only if the user has separately confirmed willingness for that specific far-city role — otherwise select **"No" / "Prefer virtual interview"** if that option exists, or flag as "Paused — Needs Input" if the form forces a binary Yes/No with no nuance and the city is far. Never silently commit to an in-person interview in a city that isn't reachable practically. |
 | Willing to work onsite / WFO | Yes, unless user says otherwise for a specific run. |
 | Immediate joiner? | No — 30 days notice. If asked "can you join in X days" and X ≥ 30, answer Yes. |
+| Per-skill experience questions — e.g. "How many years of experience do you have in Python / React.Js / Frontend Development / Mobile App Development / Software Support / BGV Platforms?" | Answer strictly from the resume, never rounded up: **Python ≈ 1.3 years**, **React.Js ≈ 1.3 years**, **Frontend Development ≈ 1.3 years**, **Artificial Intelligence / Generative AI / Agentic AI ≈ 1.3 years** (this counts the production n8n AI-workflow automation built at 75Way since June 2025, not just ReviewBytes). Answer **0** for any domain not evidenced in the resume — currently **Mobile Application Development = 0**, **Software Support = 0**, **BGV Platforms & Web Applications = 0**. If a new skill/domain question appears that is not listed here and not inferable from the resume, pause and ask rather than guessing. (Added 2026-10-02 after Naukri's chatbot-apply flow raised mandatory per-skill questions on the Zodiac and Lions Workforce listings.) |
 | Legally authorized to work in India | Yes |
 | Require visa sponsorship (any country) | No |
 | Government employee / family in government | No |
@@ -262,3 +264,4 @@ period, new preferred cities, etc. Agent should re-read this file at the
 start of every run.)*
 
 - 2026-09-26: Initial rulebook created.
+- 2026-10-13: Calibrated auto-search criteria: enforce mandatory 0-2 years experience filter across Naukri/Indeed to ensure high application match scores (>90%); aligned Key Skills with AI & backend stack (LangChain, Docker, PostgreSQL, Redis, TypeScript).
