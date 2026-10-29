@@ -1,0 +1,40 @@
+
+# Dependencies
+node_modules/
+.npm/
+.pnpm-store/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Playwright and MCP runtime output
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/.playwright-mcp/
+storage-state*.json
+auth.json
+
+# Local agent/client state
+/.agents/
+/.codex/
+/.gemini/
+
+# Logs and temporary files
+debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini

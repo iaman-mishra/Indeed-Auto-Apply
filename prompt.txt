@@ -1,0 +1,15 @@
+Start the job-application run for this repository.
+
+First, read AGENTS.md, AGENT_INSTRUCTIONS.md, RUN_CONFIG.md, docs/RULEBOOK.md, and applications.md completely. Confirm that the Playwright MCP browser tool is available.
+
+Then open the platform configured in RUN_CONFIG.md in a visible browser. If login is needed, pause only for me to log in manually.
+
+After login, work continuously without asking me whether to continue to another role, page, or batch. Use both:
+1. Newest-first search results for every relevant role keyword.
+2. The platform’s Recommended / Suggested / Jobs for You listings.
+
+Apply the configured experience and location filters. Process the newest listings first, check applications.md for duplicates, follow all fit and safety rules, apply only where AGENT_INSTRUCTIONS.md permits, and log every processed job immediately.
+
+Continue until max_jobs_to_process actionable jobs are completed, both search and recommended jobs have no new eligible listings, I tell you to stop, or a genuine pause condition occurs. Do not ask for routine progress confirmation.
+
+At the end, give one concise summary: applications submitted, external/manual applications logged, skipped jobs, suspicious jobs, and paused questions.

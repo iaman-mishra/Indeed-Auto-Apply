@@ -4,10 +4,10 @@ Edit these before starting a run. The agent reads this file fresh every
 session — it does NOT persist changes back into RULEBOOK.md.
 
 ```yaml
-platform: indeed                # indeed | linkedin | naukri | other (name it)
+platform: naukri                # indeed | linkedin | naukri | other (name it)
 target_cities: []  # empty [] = no city restriction
-max_jobs_to_process: 50         # stop after processing this many listings this run
-auto_fill_external_forms: false # true = agent will also fill Google Forms / career-site
+max_jobs_to_process: 50         # target number of actionable jobs: applied or external-required
+auto_fill_external_forms: false  # true = agent will also fill Google Forms / career-site
                                  # ATS forms it finds, not just Indeed's own apply flow.
                                  # Keep false until you've reviewed a few logged links
                                  # and trust the agent's judgement.

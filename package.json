@@ -1,0 +1,31 @@
+{
+  "name": "indeed-auto-apply",
+  "version": "1.0.0",
+  "description": "Portable Playwright MCP workflow for assisted job applications.",
+  "private": true,
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "postinstall": "node node_modules/@playwright/mcp/node_modules/playwright/cli.js install chromium",
+    "mcp": "playwright-mcp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaman-mishra/Indeed-Auto-Apply.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "bugs": {
+    "url": "https://github.com/iaman-mishra/Indeed-Auto-Apply/issues"
+  },
+  "homepage": "https://github.com/iaman-mishra/Indeed-Auto-Apply#readme",
+  "dependencies": {
+    "@playwright/mcp": "0.0.83"
+  }
+}

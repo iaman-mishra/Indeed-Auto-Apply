@@ -7,11 +7,12 @@ decide whether to apply, and either apply directly or log the job for manual
 follow-up. You must be careful, methodical, and honest in your logging.
 
 Before doing anything else, read these files in full:
-1. `docs/RULEBOOK.md` — personal info, CTC logic, standard answers, hard rules.
-2. `applications.md` — the running log of past applications (to avoid duplicates
+1. `RUN_CONFIG.md` — platform, limits, feature toggles, and resume path for this run.
+2. `docs/RULEBOOK.md` — personal info, CTC logic, standard answers, hard rules.
+3. `applications.md` — the running log of past applications (to avoid duplicates
    and to know what's already been done in prior runs).
-3. Resume file (path provided by user at runtime, e.g.
-   `docs/Resume_Aman_Mishra.pdf`) — for anything not covered in the rulebook.
+4. The resume at the `resume_path` specified in `RUN_CONFIG.md` — for anything
+   not covered in the rulebook.
 
 If any of these files are missing or a question arises that none of them
 answer, STOP and ask the user. Do not guess on anything financial, legal,
@@ -29,25 +30,24 @@ yourself, and do not store or ask for a password.
 
 ## Step 1a — CAPTCHA Handling
 
-The user has a Chrome extension installed that automatically solves
-CAPTCHAs (e.g. "I'm not a robot" checkboxes, image challenges) in the
-background. If you encounter a CAPTCHA at any point during search, apply,
-or login:
+A browser launched by Playwright MCP uses its own browser profile and may not
+contain extensions installed in the user's normal Chrome profile. If a CAPTCHA
+or other human-verification challenge appears during search, apply, or login:
 
-- Do NOT attempt to solve it yourself or ask the user to solve it manually.
-- Wait and periodically re-check the page (poll every few seconds) until
-  the CAPTCHA element disappears or the page/flow progresses on its own —
-  the extension handles it automatically in the background.
-- Give it a reasonable timeout (e.g. up to 30-45 seconds) before treating
-  it as stuck. If it's still unresolved after that window, only then pause
-  and tell the user the CAPTCHA didn't clear automatically, in case the
-  extension needs a manual nudge or has stopped working.
-- Once the CAPTCHA clears, continue the flow automatically from where you
-  left off — no need to ask the user for confirmation to proceed.
+- Do not attempt to bypass, automate, or defeat the challenge.
+- Wait briefly and re-check the page in case the site resolves the challenge
+  normally.
+- If it remains after 30–45 seconds, pause and ask the user to complete the
+  verification in the visible browser window.
+- Continue only after the user confirms that the challenge is complete and the
+  page permits access.
 
-## Step 2 — Search
+## Step 2 — Job Discovery and Processing Order
 
-Search using the domain/stack keywords from `RULEBOOK.md` Section 2, e.g.:
+Use **both** job-discovery sources on the selected platform:
+
+1. **Search results** for every relevant domain/stack keyword from
+   `RULEBOOK.md` Section 2, e.g.:
 - "Full Stack Developer"
 - "Backend Developer Python"
 - "AI Engineer LangChain"
@@ -55,11 +55,31 @@ Search using the domain/stack keywords from `RULEBOOK.md` Section 2, e.g.:
 - "Node.js Developer"
 - "Forward Deployed Engineer"
 - "AI Solutions Engineer"
+2. **Recommended jobs** (for example, Recommended, Suggested, or Jobs for You)
+   offered by the platform. Treat them as an additional source, not as a
+   replacement for role searches.
 
 Apply location and experience filters strictly on the platform:
 - **Experience filter (CRITICAL)**: Always apply the 0–2 years filter (Entry level / 1–2 yrs). Do NOT browse unfiltered listings, because applying to 3–5+ year positions degrades the application match score on platforms like Naukri (e.g. dropping experience match to 45%) and causes ATS rejections.
 - **Location filter**: India-wide unless the user restricts a run to specific cities in `RUN_CONFIG.md`.
-Pull the first page of filtered results, open each listing one at a time.
+- **Recency (CRITICAL for search results)**: Select the platform's newest-first
+  sort order, such as **Date posted: newest**, **Most recent**, or **Sort by:
+  date**. If the platform has no sort control, process the listings with the
+  newest posted date first. Do not intentionally start with older listings.
+
+Work through discovery in this order:
+
+1. Search each configured role keyword and collect the newest listings first.
+   Work through result pages from newest to oldest as needed; do not stop after
+   only the first results page when the actionable-job target has not been met.
+2. Visit the platform's recommended-jobs area during the same run. Process its
+   newest relevant listings, using any available 0–2-year and location filters.
+3. Use the same duplicate check for search and recommended listings. A listing
+   already logged from either source is a duplicate and must not be processed
+   again.
+4. Alternate back to unprocessed search-result pages or recommendations until
+   the actionable-job target is reached or there are no new eligible listings
+   remaining in either source.
 
 **How `max_jobs_to_process` is counted:** this limit only counts jobs that
 result in **Applied (native)**, **Applied (external, auto-filled)**, or
@@ -76,6 +96,20 @@ without that counting against the limit — only stop once you've reached
 combined). This means a run may need to look through more than
 `max_jobs_to_process` total listings on the platform to find that many
 genuine matches.
+
+**Continuous-run rule (CRITICAL):** Do not ask the user whether to proceed to
+the next role keyword, search-results page, recommended-job page, or batch of
+listings. Continue independently until one of these terminal conditions occurs:
+
+- `max_jobs_to_process` actionable jobs have been handled;
+- there are no new eligible jobs remaining in both search and recommendations;
+- the user tells you to stop; or
+- a defined pause condition applies (manual login, unresolved CAPTCHA,
+  sensitive/unanswered question, or another rulebook-required question).
+
+For example, after handling 10–15 jobs from one role, automatically move to
+the next role and/or recommended jobs if the target has not been reached. Give
+one summary only at the end of the run; do not request routine mid-run approval.
 
 ## Step 3 — For every job listing found
 
@@ -161,11 +195,12 @@ up personally regardless of how the agent applied.
 
 ## Step 5 — End of run summary
 
-After processing all available listings (or after the user says to stop),
-give the user a short spoken summary: how many jobs found, how many applied
-directly, how many logged as external/manual, how many skipped, how many
-paused needing input. Do not restate every single job in chat — the detail
-lives in `applications.md`.
+After reaching the actionable-job target, exhausting both search and
+recommended-job sources, or after the user says to stop, give the user a short
+spoken summary: how many jobs were found through search versus recommendations,
+how many were applied to directly, how many were logged as external/manual, how
+many were skipped, and how many paused needing input. Do not restate every
+single job in chat — the detail lives in `applications.md`.
 
 ---
 
