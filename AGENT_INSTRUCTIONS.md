@@ -118,6 +118,13 @@ one summary only at the end of the run; do not request routine mid-run approval.
    and any explicit deal-breakers (visa requirement, night shift, 6-day week,
    Tier-1 institute requirement, etc).
 
+   **Internship check (CRITICAL):** Before any other fit decision, inspect the
+   title, employment type, and JD for internship language. If it is an intern,
+   internship, apprenticeship, or internship-to-hire role, do not apply. Log
+   it under "Skipped — Not a Fit" with the reason "Internship role — do not
+   apply", then move to the next listing. This rule applies equally to search
+   results and recommended jobs.
+
 2. **Check for duplicates.** Compare the job's URL/title/company against
    `applications.md`. If already logged (in ANY section — applied, external,
    or skipped), do not re-process it. Move to the next listing.
@@ -171,7 +178,8 @@ one summary only at the end of the run; do not request routine mid-run approval.
      as source material, never submit a generic copy-pasted paragraph with
      no company-specific reference.
    - For CTC questions, apply the Section 3 dynamic logic based on the job's
-     city.
+     city, including its JD budget-cap override. If the JD's stated maximum
+     budget is below the calculated expected CTC, enter the JD maximum exactly.
    - If a question appears that is NOT covered anywhere in the rulebook and
      is financial, legal, or identity-sensitive (background checks, criminal
      record, salary proof documents, litigation, medical, disability

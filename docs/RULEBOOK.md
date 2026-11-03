@@ -21,6 +21,7 @@ agent MUST stop and ask the user rather than guessing.
 | Highest Education | B.Tech, Computer Science Engineering, IIMT College of Engineering, Greater Noida (2021–2025) |
 | Graduation Year | 2025 |
 | Citizenship | Indian |
+| Valid Passport | No (does not hold a valid passport yet) |
 | Work Authorization | Legally authorized to work in India; does NOT hold or require visa/work permit for any other country |
 | Notice Period | 30 days |
 | Current Employer | 75Way Technologies Pvt Ltd |
@@ -76,6 +77,9 @@ for 2+ years mandatory, or explicitly "Senior".)
 
 **Hard skip / auto-reject criteria** (agent must NOT apply, just log under
 "Skipped — Not a Fit" with reason):
+- Any internship, intern, apprenticeship, or internship-to-hire role. Do not
+  apply even if the listing says it could convert to full-time. Log the exact
+  reason as "Internship role — do not apply".
 - Role requires a visa / work authorization / C2C / W2 outside India, unless
   it's a remote role explicitly open globally.
 - Role requires Tier-1 institute pedigree as a hard filter.
@@ -150,6 +154,19 @@ AI-specialist roles):
 **Always give a small range, not a single hard number**, e.g. "₹6 – 6.5 LPA",
 unless the form strictly requires a single numeric value, in which case use
 the lower-middle of that range.
+
+**JD budget cap override (CRITICAL):** When the JD or application explicitly
+states a salary budget/range, compare its maximum value with the expected CTC
+calculated above. If the JD maximum is lower than the calculated expected CTC,
+enter **exactly the maximum budget stated in the JD**. Do not quote above the
+employer's published cap and do not ask for routine confirmation. For example,
+if the calculated expected CTC is ₹6.5 LPA but the JD budget is ₹4–5 LPA,
+enter ₹5 LPA.
+
+If the form requests a different but clearly convertible period, convert the
+JD maximum into the form's unit (for example, ₹40,000/month becomes ₹4.8 LPA
+for an annual-CTC field). If the budget currency, pay period, or maximum value
+is unclear, do not guess; log the job as paused and ask the user.
 
 **If the form asks for expected CTC as a percentage hike instead of absolute
 number:** state 60–90% hike depending on city tier above.
@@ -265,3 +282,4 @@ start of every run.)*
 
 - 2026-09-26: Initial rulebook created.
 - 2026-10-13: Calibrated auto-search criteria: enforce mandatory 0-2 years experience filter across Naukri/Indeed to ensure high application match scores (>90%); aligned Key Skills with AI & backend stack (LangChain, Docker, PostgreSQL, Redis, TypeScript).
+- 2026-10-30: Never apply to internship roles; when a clear JD compensation cap is below the calculated expected CTC, use the JD's maximum budget in the application.
