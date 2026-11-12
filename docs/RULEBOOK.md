@@ -1,285 +1,274 @@
 # RULEBOOK — Aman Mishra Job Application Reference
 
-This file is the single source of truth for any question the agent encounters
-while filling out a job application. If a question isn't covered here, the
-agent MUST stop and ask the user rather than guessing.
+This is the single source of truth for application data and decisions. Edit
+candidate facts only in **Section 1** and application-selection rules only in
+**Section 2**. Other sections reference those blocks rather than repeating
+values. If a question or decision is not covered here, stop and ask the user.
 
 ---
 
-## 1. Personal Details
+## 1. Candidate Facts Registry — Edit Here When Details Change
+
+### Identity and contact
 
 | Field | Value |
 |---|---|
-| Full Name | Aman Mishra |
+| Full name | Aman Mishra |
 | Email | amanmishra.5272@gmail.com |
 | Phone | +91-8851225097 |
-| Current Location | Mohali, Punjab, India |
-| Hometown (birthplace) | Pratapgarh, Uttar Pradesh |
+| Current location / address | Mohali, Punjab, India — 160055 |
+| Hometown / birthplace | Pratapgarh, Uttar Pradesh |
 | Grew up / brought up in | Noida, Uttar Pradesh |
+| Date of birth | 21/09/2004 |
+| Gender | Male |
+| Citizenship | Indian |
+| Work authorization | Authorized to work in India; no visa/work permit is held or required for another country |
+| Valid passport | No |
 | LinkedIn | linkedin.com/in/iamanmishra |
 | GitHub | github.com/iaman-mishra |
-| Highest Education | B.Tech, Computer Science Engineering, IIMT College of Engineering, Greater Noida (2021–2025) |
-| Graduation Year | 2025 |
-| Citizenship | Indian |
-| Valid Passport | No (does not hold a valid passport yet) |
-| Work Authorization | Legally authorized to work in India; does NOT hold or require visa/work permit for any other country |
-| Notice Period | 30 days |
-| Current Employer | 75Way Technologies Pvt Ltd |
-| Current Role | Associate Software Development Engineer |
-| Employment Start Date | June 2025 |
-| Total Experience | ~1 year 3 months (as of Sept 2026) |
-| Current CTC (fixed, excl. ESOPs/bonus) | ₹3.6 LPA |
-| 10th class % | 70% |
-| 12th class % | 65.8% |
-| Graduation CGPA | 7.47 CGPA (convert to % if a form demands it: 7.47 × 10 = ~74.7%) |
-| Postal Code (Mohali) | 160055 |
-| Address (if a form asks) | Mohali, Punjab, India – 160055 |
-| Date of Birth | 21/09/2004 |
+| Portfolio | https://iamanmishra.vercel.app/ |
+
+### Education
+
+| Field | Value |
+|---|---|
+| Highest education | B.Tech, Computer Science Engineering, IIMT College of Engineering, Greater Noida (2021–2025) |
+| Graduation year | 2025 |
+| Graduation CGPA | 7.47 CGPA (use ~74.7% only if a form requires a percentage) |
+| 10th percentage | 70% |
+| 12th percentage | 65.8% |
+| 12th certificate available | Yes |
+
+### Employment and compensation baseline
+
+| Field | Value |
+|---|---|
+| Current employer | 75Way Technologies Pvt Ltd |
+| Current role | Associate Software Development Engineer |
+| Employment start date | June 2025 |
+| Total experience | ~1 year 5 months (as of November 2026) |
+| Current CTC baseline | ₹3.6 LPA fixed, excluding ESOPs/bonus |
+| Notice period | 30 days |
+| Immediate joiner | No; can join in 30 days |
+| Reason for change | Looking for greater ownership, exposure to the role’s core technology, and stronger growth opportunities. |
+
+### Work preferences and factual answers
+
+| Topic | Answer / handling |
+|---|---|
+| Relocation | Yes for a strong-fit role within India, unless the run is explicitly local-only. |
+| Onsite / WFO | Yes, unless the user restricts a run. |
+| In-person interview: Mohali, Chandigarh, Noida, or Delhi NCR | Yes. |
+| In-person interview: other city | Use “Yes, with advance notice to arrange travel” in free text. If forced Yes/No, choose Yes only with prior confirmation for that city; otherwise use Prefer virtual / No if available, or pause. |
+| Legally authorized to work in India | Yes. |
+| Visa sponsorship | No. |
+| Government employee / family in government | No. |
+| Non-compete / non-solicitation | No. |
+| Disability | No, or “Prefer not to say” when offered. |
+| Veteran status | Not a veteran / not applicable. |
+| Age 18+ / DOB proof available | Yes. |
+| UAN / PF number | Ask the user if mandatory; leave blank if optional. |
 
 ---
 
-## 2. Domain & Stack — What to Apply For
+## 2. Job Selection Policy — One Decision Block
 
-**Primary stack (strong match — apply confidently):**
-Python, FastAPI, JavaScript, TypeScript, React.js, Next.js, Node.js, Express.js,
-NestJS, REST APIs, PostgreSQL, MongoDB, Redis, Docker, AWS (S3, EC2, RDS, ECR),
-Git/CI-CD, LangChain, LangGraph, RAG, LLM Agents, Prompt Engineering, MCP, n8n,
-OpenAI/Anthropic/Gemini API integration.
+Evaluate every listing against this section before clicking Apply, opening an
+external application, or submitting a form. A live user instruction may change
+this policy for that run only.
 
-**Target role titles (in priority order):**
+### Target roles and skill fit
+
+**Primary stack:** Python, FastAPI, JavaScript, TypeScript, React.js, Next.js,
+Node.js, Express.js, NestJS, REST APIs, PostgreSQL, MongoDB, Redis, pgVector,
+Qdrant, SQLAlchemy, Alembic, Prisma, Celery, RabbitMQ, BullMQ, Docker,
+Docker Compose, Linux, AWS (S3, EC2, RDS, ECR), Git/GitHub Actions CI/CD,
+LangChain, LangGraph, RAG, LLM Agents, Multi-Agent Systems, Prompt Engineering,
+MCP, n8n, and OpenAI/Anthropic/Gemini API integration. (Note: Kafka is excluded
+from primary stack).
+
+**Target roles, in order:**
+
 1. Full Stack Developer / Engineer
 2. Backend Developer (Python or Node.js)
 3. AI/GenAI Engineer / AI Full-Stack Engineer
-4. Forward Deployed Engineer (FDE) / AI Solutions Engineer — customer-facing
-   AI implementation roles; strong fit given hands-on LangChain/RAG/agent
-   experience even without "FDE" title history
+4. Forward Deployed Engineer / AI Solutions Engineer
 5. MERN Stack Developer
 6. Python Developer
-7. React/Frontend Developer (only if 1-3 yrs range, not senior)
-8. Team Lead / Tech Lead (Software Development) — apply even though current
-   experience (~1 yr) is below typical Team Lead expectations (usually 3-5+
-   yrs), UNLESS the JD explicitly gates on years of people-management
-   experience as a hard requirement (see Section 2 "Acceptable experience
-   range" note below for how to judge this)
+7. React / Frontend Developer (1–3 years; not senior)
+8. Team Lead / Tech Lead (Software Development), unless people-management
+   experience is an explicit hard requirement
 
-**Note on Team Lead / FDE roles specifically:**
-- **Forward Deployed Engineer**: this is a strong genuine fit — FDE roles
-  value hands-on AI/LLM integration, RAG, agent-building, and
-  customer-facing technical delivery, which lines up well with existing
-  experience (BytesAI, LangChain agent work, n8n automation). Apply
-  normally, do not treat the "1+ years experience only" gap as a blocker
-  unless the JD explicitly demands 3+ years AND frames it as a hard filter.
+Forward Deployed Engineer roles are a genuine fit because of hands-on
+LangChain, RAG, agent, n8n, and customer-facing implementation work. Do not
+reject them merely because the title was not held before.
 
+**Experience range:** Prefer 0–2-year listings. One year over the stated range
+is still eligible. Skip roles requiring 2+ years as mandatory or explicitly
+senior, except the Team Lead/FDE allowance above when the JD does not make the
+extra experience a hard gate.
 
-**Acceptable experience range:** 0–2 years listed requirement.
-(1 years over-requirement is still worth applying to; skip anything asking
-for 2+ years mandatory, or explicitly "Senior".)
+### Compensation eligibility — hard gate
 
-**Hard skip / auto-reject criteria** (agent must NOT apply, just log under
-"Skipped — Not a Fit" with reason):
-- Any internship, intern, apprenticeship, or internship-to-hire role. Do not
-  apply even if the listing says it could convert to full-time. Log the exact
-  reason as "Internship role — do not apply".
-- Role requires a visa / work authorization / C2C / W2 outside India, unless
-  it's a remote role explicitly open globally.
-- Role requires Tier-1 institute pedigree as a hard filter.
-- Role is fresher-only / campus hiring AND pays below current CTC equivalent.
-- Role's core stack has zero overlap with primary stack (e.g. pure Java,
-  pure PHP, embedded/hardware, Salesforce/SAP functional roles) UNLESS the
-  JD explicitly says "any backend language" or similar.
-- Non-technical roles unrelated to software: pure sales, marketing, pure
-  business development, content writing, HR — UNLESS user has separately
-  told the agent to include "less technical / support" roles for a given run.
-- Suspicious/scam signals: personal Gmail/Yahoo recruiter address for a
-  US role paying unusually high (e.g. $150k+) with no company name, or asking
-  for payment/bank details before any interview. Flag these under a separate
-  "⚠️ Suspicious — Did Not Apply" section, do not send any personal info.
+Compare a disclosed employer salary with the **Current CTC baseline** in
+Section 1. Compare like-for-like annual amounts; convert a clear monthly,
+annual, or range amount before deciding. Do not infer compensation from title,
+location, or market averages.
 
-**Soft-flag (agent may apply but must note the caveat in the log):**
-- Night shift / US shift timing.
-- 6-day work week.
-- On-site with no remote/hybrid option in a city other than current location.
-- Requires relocation.
+| Comparable listed annual pay* | Decision |
+|---|---|
+| Below the current CTC baseline | **Skip. Never apply, log as external required, or submit.** |
+| Exactly the current CTC baseline | Apply **only if the role is explicitly fully remote**. Onsite and hybrid roles must be skipped. |
+| Above the current CTC baseline | Eligible to continue, subject to all other rules. |
+| Not disclosed or unclear | Continue based on the other rules. Re-run this gate immediately if compensation appears later, including in a form. Pause rather than guess if the amount or period cannot be compared. |
+
+*For a fixed salary, use that figure. For a salary range, use its **lower
+bound** so no listed lower-than-current offer can slip through. If only a
+maximum/cap is disclosed, use that cap. This rule overrides all expected-CTC
+and budget-cap logic: a lower disclosed budget is never an acceptable reason
+to apply. Log a rejected listing as `Skipped — Not a Fit` with the salary,
+work mode, and reason.
+
+### Hard skips
+
+Do not apply; log `Skipped — Not a Fit` with a short reason when any of these
+applies:
+
+- Internship, apprenticeship, or internship-to-hire role. Use the exact note:
+  `Internship role — do not apply`.
+- A failed **Compensation eligibility** gate above.
+- Visa/work authorization/C2C/W2 requirement outside India, unless the role is
+  remote and explicitly globally open.
+- Tier-1 institute pedigree is a hard filter.
+- Fresher/campus role that fails the compensation gate.
+- Core stack has no overlap with the primary stack (for example, pure Java,
+  pure PHP, embedded/hardware, Salesforce/SAP functional), unless the JD says
+  any backend language is accepted.
+- Role outside the target profile: QA/testing, support, pure sales, marketing,
+  business development, content, HR, or any role without a meaningful match to
+  the target roles and primary stack.
+- Explicit hard experience/seniority requirement outside the eligible range.
+
+### Suspicious and soft-flag conditions
+
+**Suspicious — do not apply:** personal Gmail/Yahoo recruiter email for an
+unnamed US job with implausibly high pay, any request for payment/bank details,
+or another scam signal. Log `⚠️ Suspicious — Did Not Apply`.
+
+**Soft flags — application remains eligible:** night/US shift, six-day week,
+onsite work outside the current city, or relocation. Record the caveat in the
+log. A soft flag never overrides the compensation hard gate.
 
 ---
 
-## 3. Expected CTC Logic (Dynamic by City)
+## 3. Expected CTC Answers — Use Only After Passing Section 2
 
-Current fixed CTC: ₹3.6 LPA (Mohali-based, ~1 year experience).
-
-When asked "Expected CTC", the agent computes a number using the base formula:
+Use the **Current CTC baseline** from Section 1. Quote a small range unless a
+form accepts only one number, in which case use the lower-middle of the range.
+Round to the nearest ₹0.5 LPA.
 
 ```
 expected_ctc = current_ctc × city_multiplier × role_stretch_factor
 ```
 
-**City multiplier** (distance-from-home adjustment — home base is Noida.
-Cities close to home need a smaller comp bump to justify; cities far from
-home / requiring full relocation across the country need a bigger bump,
-since cost of living, moving expenses, and being away from family all go up
-with distance):
-
-| City tier | Cities | Multiplier | Why |
+| City tier | Cities | Multiplier | Typical answer |
 |---|---|---|---|
-| Home zone (no real relocation) | Noida, Delhi NCR, Gurugram, Ghaziabad, Faridabad | 1.5–1.95x | Living at/near home, minimal disruption — ask **₹5.5 – 7 LPA** |
-| Tier 2 (own/nearby region) | Mohali, Chandigarh, Lucknow | 1.4–1.6x | Still North India, manageable |
-| Far relocation (different state, high COL, far from family) | Bangalore, Pune, Hyderabad, Ahmedabad, Chennai, Mumbai | 1.9–2.2x | Full relocation across the country — higher COL + distance from home justifies a bigger jump |
-| Remote (India, company city unclear) | — | 1.5x | No relocation at all |
-| International remote (no visa needed, salary in USD) | — | Do NOT scale from INR baseline — quote market USD rate for the role/stack (research the role's typical range; if unknown, state "open to discussing based on role scope" rather than a fixed number) |
+| Home zone | Noida, Delhi NCR, Gurugram, Ghaziabad, Faridabad | 1.5–1.95x | ₹5.5–7 LPA |
+| Tier 2 | Mohali, Chandigarh, Lucknow | 1.4–1.6x | ~₹5.5 LPA |
+| Far relocation | Bangalore, Pune, Hyderabad, Ahmedabad, Chennai, Mumbai | 1.9–2.2x | ₹7–7.5 LPA standard; ₹8–8.5 LPA AI-specialist |
+| Remote India | Company city unclear | 1.5x | ~₹5.5 LPA |
+| International remote | Salary in USD, no visa needed | Research market rate; otherwise say open to discussing based on scope. |
 
-**Home zone quick reference (Noida / Delhi NCR / Gurugram):**
-Always target **₹5.5 – 7 LPA** for these cities regardless of company size —
-use the lower end (~₹5.5–6 LPA) for smaller/early-stage companies and the
-higher end (~₹6.5–7 LPA) for larger/well-established companies, but never
-quote below ₹5.5 LPA or above ₹7 LPA for this zone.
+Role stretch factor: standard 1.0x; matching AI/LLM specialization 1.05–1.1x;
+founding/early-stage/high-ownership role 1.1x. For a percentage-hike field,
+answer 60–90% by city tier.
 
-**Role stretch factor** (extra bump if the role is a clear step up in scope,
-tech depth, or seniority language like "own end-to-end", "founding engineer",
-AI-specialist roles):
-- Standard role at same level: 1.0x
-- Role with added AI/LLM specialization requirement matching your strength: 1.05–1.1x
-- Founding/early-stage/high-ownership role: 1.1x
-
-**Rounding:** Round to the nearest ₹0.5 LPA. Never quote decimals like ₹6.35 LPA.
-
-**Worked examples:**
-- Noida/Delhi NCR/Gurugram, small/early-stage company → quote **₹5.5 – 6 LPA**
-- Noida/Delhi NCR/Gurugram, large/established company → quote **₹6.5 – 7 LPA**
-- Mohali/Chandigarh, standard role → 3.6 × 1.5 = ~5.4 → quote **₹5.5 LPA**
-- Bangalore/Pune/Hyderabad, standard role → 3.6 × 2.0 = ~7.2 → quote **₹7 – 7.5 LPA**
-- Bangalore/Pune/Hyderabad, AI-specialist role → 3.6 × 2.0 × 1.1 = ~7.9 → quote **₹8 – 8.5 LPA**
-- Ahmedabad/Chennai, standard role → 3.6 × 1.9 = ~6.8 → quote **₹7 LPA**
-- Remote India, unclear city → 3.6 × 1.5 = ~5.4 → quote **₹5.5 LPA**
-
-**Always give a small range, not a single hard number**, e.g. "₹6 – 6.5 LPA",
-unless the form strictly requires a single numeric value, in which case use
-the lower-middle of that range.
-
-**JD budget cap override (CRITICAL):** When the JD or application explicitly
-states a salary budget/range, compare its maximum value with the expected CTC
-calculated above. If the JD maximum is lower than the calculated expected CTC,
-enter **exactly the maximum budget stated in the JD**. Do not quote above the
-employer's published cap and do not ask for routine confirmation. For example,
-if the calculated expected CTC is ₹6.5 LPA but the JD budget is ₹4–5 LPA,
-enter ₹5 LPA.
-
-If the form requests a different but clearly convertible period, convert the
-JD maximum into the form's unit (for example, ₹40,000/month becomes ₹4.8 LPA
-for an annual-CTC field). If the budget currency, pay period, or maximum value
-is unclear, do not guess; log the job as paused and ask the user.
-
-**If the form asks for expected CTC as a percentage hike instead of absolute
-number:** state 60–90% hike depending on city tier above.
+If an eligible employer’s published maximum is below the calculated expectation
+but still above the current CTC baseline, quote that maximum when the form
+requires a numeric answer. If it equals the baseline, it is eligible only when
+the role is fully remote; use the published maximum. If the amount, currency,
+or pay period is unclear, pause and ask rather than guessing.
 
 ---
 
-## 4. Standard Answers to Common Application Questions
+## 4. Runtime Answering Principles
 
-Use these verbatim/near-verbatim unless the JD context clearly demands a
-tweak (agent may lightly adapt wording to match company name/role name).
+Generate every non-factual application answer at runtime from the full JD,
+the resume, Section 1 facts, Section 2 skills, and the project evidence below.
+Do not use a fixed response, a fixed project, or a fixed set of achievements.
 
-| Question | Answer |
-|---|---|
-| Current CTC | ₹3.6 LPA (fixed, no ESOPs) |
-| Expected CTC | See Section 3 dynamic logic |
-| Notice period | 30 days |
-| Reason for change / Why leaving current job | "Looking for a role with greater ownership, exposure to [role's core tech, e.g. AI/LLM systems or a larger-scale product], and stronger growth opportunities than my current position offers." |
-| Why do you want to join us / this role | Generate a 2–4 sentence tailored answer referencing 2–3 specific things from the JD (tech stack overlap, company mission/domain, growth stage) + tie back to Aman's LangChain/RAG/full-stack experience. Never copy-paste a generic answer verbatim across companies — must reference the specific company name and domain. |
-| Why should we hire you / what makes you a fit | Reference: production experience shipping 5+ apps serving 5000+ users, RAG/LangChain agent system (BytesAI), Redis caching that cut DB load 40-60%, ownership mindset, fast learner. |
-| Current location | Mohali, Punjab |
-| Hometown / native place | Pratapgarh, Uttar Pradesh (birthplace — use this specifically when a form asks "hometown" or "native place", NOT current location) |
-| Where did you grow up / brought up | Noida, Uttar Pradesh (use this if a form specifically asks where you were raised/grew up, distinct from "hometown") |
-| Willing to relocate | Yes, if role is a strong fit and city is within India. No, only if user has explicitly restricted a given run to "local only". |
-| Available for offline / in-person / face-to-face interview | **Do NOT default to "Yes" blindly.** Apply this logic: (1) If the job's city is Mohali, Chandigarh, Noida, or Delhi NCR (i.e. reachable within a day trip from current location) → Yes. (2) If the job's city is far (Bangalore, Pune, Hyderabad, Chennai, Ahmedabad, Mumbai, etc.) → answer "Yes, with advance notice to arrange travel" if the form allows free text, or select "Yes" only if the user has separately confirmed willingness for that specific far-city role — otherwise select **"No" / "Prefer virtual interview"** if that option exists, or flag as "Paused — Needs Input" if the form forces a binary Yes/No with no nuance and the city is far. Never silently commit to an in-person interview in a city that isn't reachable practically. |
-| Willing to work onsite / WFO | Yes, unless user says otherwise for a specific run. |
-| Immediate joiner? | No — 30 days notice. If asked "can you join in X days" and X ≥ 30, answer Yes. |
-| Per-skill experience questions — e.g. "How many years of experience do you have in Python / React.Js / Frontend Development / Mobile App Development / Software Support / BGV Platforms?" | Answer strictly from the resume, never rounded up: **Python ≈ 1.3 years**, **React.Js ≈ 1.3 years**, **Frontend Development ≈ 1.3 years**, **Artificial Intelligence / Generative AI / Agentic AI ≈ 1.3 years** (this counts the production n8n AI-workflow automation built at 75Way since June 2025, not just ReviewBytes). Answer **0** for any domain not evidenced in the resume — currently **Mobile Application Development = 0**, **Software Support = 0**, **BGV Platforms & Web Applications = 0**. If a new skill/domain question appears that is not listed here and not inferable from the resume, pause and ask rather than guessing. (Added 2026-10-02 after Naukri's chatbot-apply flow raised mandatory per-skill questions on the Zodiac and Lions Workforce listings.) |
-| Legally authorized to work in India | Yes |
-| Require visa sponsorship (any country) | No |
-| Government employee / family in government | No |
-| Non-compete / non-solicitation with current employer | No |
-| Disability | No (or "Prefer not to say" if the form offers it and user hasn't stated otherwise) |
-| Gender | Male |
-| Veteran status | Not a veteran / Not applicable (India-based candidate) |
-| Age 18+ / DOB proof available | Yes |
-| 12th class certificate available | Yes |
-| UAN / PF number | Ask user directly — not stored here yet. If field is optional, skip. If mandatory and unknown, flag in log for user follow-up rather than guessing. |
-| Portfolio / personal website | https://iamanmishra.vercel.app/ |
-| GitHub repo link for "best project" | github.com/iaman-mishra (point to ReviewBytes or Greenroom write-up per JD relevance; do not fabricate public repo links that don't exist) |
+- For “why this role/company?” and “why hire you?”, identify the JD's required
+  skills, domain, and scope; select only the strongest truthful evidence that
+  matches them; then write a fresh, concise answer naming the company and role.
+- For any project question, choose the verified project whose technologies,
+  domain, and outcomes best match the JD. Combine only relevant facts from that
+  project; never paste a project description unchanged or claim unrelated work.
+- For a project or portfolio URL, first select the most relevant verified public
+  project/repository at runtime from the resume or GitHub. If no specific public
+  project URL is verified, use the GitHub profile in Section 1. Never invent a
+  repository or deep link.
+- For per-skill experience, derive the answer from verified evidence. Python,
+  React.js, frontend, AI/GenAI/agentic AI, Celery, RabbitMQ, BullMQ, and
+  combined distributed-systems/task-queue/broker questions map to **~1.3 years**.
+  Never round up; check related evidence before treating a product-name variant
+  as different. (Kafka is not part of primary stack).
+- Never enter, select, or submit `0` / `0 years` for an experience question
+  without explicit user confirmation for that exact question. If a skill is
+  unclear, pause and quote the exact question rather than assuming zero.
+- For a financial, legal, identity-sensitive, medical, or compliance question
+  not explicitly answered in Section 1, pause before submission and ask.
 
 ---
 
-## 4a. Indeed "Screener Gate" Policy — "It looks like you don't meet these
-employer requirements" / "Apply anyway" intervention
+## 5. Indeed Screener-Gate Policy
 
-Indeed sometimes shows a hard-stop screen listing the employer's stated
-minimums (e.g. "Node.js: 3 years (Required)") after you answer its
-screener questions, with two options: "Return to job search" or "Apply
-anyway". Use this policy instead of pausing every time:
+For an Indeed “you do not meet requirements / Apply anyway” screen, choose
+`Apply anyway` only after the listing has passed Section 2.
 
-- **Use "Apply anyway" and submit** when the gap is a **soft/experience-year
-  mismatch** you can reasonably argue around in an interview — i.e. the
-  gate is about years of experience in a skill you do genuinely have
-  (Node.js, SQL, Python, React, etc.), even if the number is higher than
-  your literal years (e.g. they want 3, you have ~1–1.5 years but strong
-  hands-on production work). Apply anyway in these cases — do NOT pause.
-- **Skip / pause and ask the user** only when the gate is a **hard factual
-  mismatch that can't be argued around in an interview** — specifically:
-  - A location gate requiring you to *already* live in a specific city you
-    don't live in (not just "willing to relocate" — an actual current-
-    residence check).
-  - A citizenship/visa/work-authorization gate you don't meet.
-  - A hard minimum total experience gate that's more than double your
-    actual total experience (e.g. they require 5+ years and you have ~1).
-  - Anything else that isn't a skill-years soft gate as described above.
-- When in doubt between these two cases, default to **"Apply anyway"** —
-  most of these gates are soft filters employers set generically and don't
-  strictly enforce, and the cost of trying is low. Only pause for the
-  narrow hard-mismatch cases above.
+- Proceed for a soft skill-years mismatch where the underlying skill is real
+  experience (for example, the employer asks for three years of Python or
+  Node.js and the candidate has roughly 1–1.5 years of production work).
+- Pause or skip for a current-residence gate, unmet citizenship/authorization,
+  a total-experience minimum more than double the current total, or another
+  hard factual mismatch.
+- When the only uncertainty is a skill-years soft gate, apply anyway. This
+  policy never overrides the compensation eligibility hard gate.
 
 ---
 
-## 5. "Best Project" Description Bank (reusable, tweak per JD emphasis)
+## 6. Project Evidence Bank — Facts, Not Templates
 
-**ReviewBytes (AI/LLM-heavy JDs):**
-"AI-first, gamified medical education platform. Designed an end-to-end LLM-powered
-content pipeline validating and storing 10,000+ structured documents in a
-hierarchical PostgreSQL schema. Built BytesAI, a domain-constrained multi-agent
-chat system using LangChain with RAG-based retrieval via pgVector. Implemented
-Redis caching (TTL strategies) that cut DB load 40-60% and improved API response
-times up to 2x. Fully Dockerized with GitHub Actions CI/CD to AWS EC2."
+Use these as factual source material only. Select and paraphrase relevant facts
+for the particular JD under Section 4; never submit either entry verbatim.
 
-**Greenroom (full-stack/backend-heavy JDs):**
-"Social media platform for athletes. Built and enhanced 10+ full-stack features
-in production using React.js and Node.js. Designed a chunk-based video upload
-system using AWS S3 pre-signed URLs to handle large media reliably. Implemented
-access/refresh token authentication for secure sessions."
+### ReviewBytes — AI/LLM-heavy roles
 
----
+Verified deployment: https://ready.reviewbytes.com/
 
-## 6. Things the Agent Must NEVER Do
+AI-first, gamified medical education platform. Designed an end-to-end
+LLM-powered content pipeline validating and storing 10,000+ structured
+documents in a hierarchical PostgreSQL schema. Built BytesAI, a
+domain-constrained multi-agent chat system using LangChain with RAG retrieval
+through pgVector. Implemented Redis caching with TTL strategies that cut DB
+load 40–60% and improved API response times up to 2x. Fully Dockerized with
+GitHub Actions CI/CD to AWS EC2.
 
-- Never invent a portfolio URL, GitHub repo, certification, or employment
-  history detail not present in this file or the resume.
-- Never submit payment information, bank details, or ID document scans as
-  part of an "application" — flag and stop if a form asks for this.
-- Never agree to unusual pre-employment financial conditions (e.g. "pay a
-  deposit for training kit").
-- Never answer a legal/compliance question (e.g. "have you had a background
-  check issue", "any pending litigation") without explicit user confirmation
-  — always flag these for manual review instead of guessing "No" by default.
-- Never submit an application to a role in the "Hard skip" list.
-- Never apply twice to the exact same job posting (same company + same role
-  title + same JD URL) — check `applications.md` first for duplicates.
+### Greenroom — full-stack/backend roles
+
+Social-media platform for athletes. Built and enhanced 10+ production
+full-stack features using React.js and Node.js. Designed a chunk-based video
+upload system using AWS S3 pre-signed URLs and implemented access/refresh-token
+authentication for secure sessions.
 
 ---
 
-## 7. Update Log
+## 7. Non-Negotiable Safety and Logging Rules
 
-*(User can append changes here — e.g. new CTC after a raise, new notice
-period, new preferred cities, etc. Agent should re-read this file at the
-start of every run.)*
-
-- 2026-09-26: Initial rulebook created.
-- 2026-10-13: Calibrated auto-search criteria: enforce mandatory 0-2 years experience filter across Naukri/Indeed to ensure high application match scores (>90%); aligned Key Skills with AI & backend stack (LangChain, Docker, PostgreSQL, Redis, TypeScript).
-- 2026-10-30: Never apply to internship roles; when a clear JD compensation cap is below the calculated expected CTC, use the JD's maximum budget in the application.
+- Never invent experience, projects, dates, links, certifications, or employment history.
+- Never submit payment information, bank details, or ID-document scans.
+- Never agree to an unusual pre-employment financial condition, such as a
+  training-kit deposit.
+- Never answer a legal/compliance question without explicit confirmation.
+- Never reapply to the same company + role + JD URL; check `applications.md`.
+- Log every processed job immediately, including salary/work-mode evidence for
+  compensation-gate skips.

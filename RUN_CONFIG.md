@@ -14,8 +14,6 @@ auto_fill_external_forms: false  # true = agent will also fill Google Forms / ca
 send_manual_emails: false       # true = agent will draft AND send emails where JD only
                                  # lists an email address (requires separate email-sending
                                  # tool/access to be wired up — leave false otherwise).
-include_less_technical_roles: false  # true = also consider QA/testing, support, BD roles
-                                      # per earlier conversation with the user.
 resume_path: "docs/Resume_Aman_Mishra.pdf"
 notes_for_this_run: ""          # free text — e.g. "focus only on AI/LLM roles today"
 ```

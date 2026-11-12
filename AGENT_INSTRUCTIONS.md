@@ -34,13 +34,21 @@ A browser launched by Playwright MCP uses its own browser profile and may not
 contain extensions installed in the user's normal Chrome profile. If a CAPTCHA
 or other human-verification challenge appears during search, apply, or login:
 
-- Do not attempt to bypass, automate, or defeat the challenge.
-- Wait briefly and re-check the page in case the site resolves the challenge
-  normally.
-- If it remains after 30–45 seconds, pause and ask the user to complete the
-  verification in the visible browser window.
-- Continue only after the user confirms that the challenge is complete and the
-  page permits access.
+- Do not attempt to bypass, automate, defeat, click through, or invoke a solver
+  for the challenge. Do not install, configure, or operate CAPTCHA-solving
+  extensions or services.
+- Keep the visible browser open and perform an unattended observation loop:
+  wait 10 seconds, then inspect whether normal page access has returned. Repeat
+  this at most 6 times (a maximum of 60 seconds total), without asking the user
+  to prompt the agent again between checks.
+- If the challenge clears normally at any check, continue the interrupted work
+  automatically.
+- If it remains after the sixth check, immediately append a record under
+  `## CAPTCHA Not Verified` in `applications.md` using that section's format.
+  Then pause and ask the user to complete the verification in the visible
+  browser window; continue only after the page permits access.
+- Treat Cloudflare challenges as manual verification. They may clear normally
+  while being observed, but the agent must not try to bypass or solve them.
 
 ## Step 2 — Job Discovery and Processing Order
 
@@ -66,6 +74,26 @@ Apply location and experience filters strictly on the platform:
   sort order, such as **Date posted: newest**, **Most recent**, or **Sort by:
   date**. If the platform has no sort control, process the listings with the
   newest posted date first. Do not intentionally start with older listings.
+
+### Title-first triage (before opening any JD)
+
+Use the listing card's title and any visible role/skill tags before opening a
+detail page. Open the JD only when the title is a target role, names a primary
+stack technology, or is reasonably ambiguous but could match the target
+profile (for example, Software Engineer or Solutions Engineer).
+
+- Do **not** open or read the JD for a title that is clearly outside the target
+  profile: sales, business development, recruiter/HR, marketing, content,
+  customer/product support, QA/tester, data entry, accountant, designer, or a
+  clearly unrelated technology/domain.
+- Apply this title triage especially strictly to recommended jobs. A
+  recommendation is not a reason to open a clearly unrelated listing.
+- A title-screened listing is not a processed job: do not open it, do not read
+  its JD, do not count it toward any limit, and do not add it to
+  `applications.md`.
+- When the title alone cannot reliably rule a role out, open the JD and use the
+  normal fit rules. Do not reject a plausibly matching role solely because its
+  title is broad or non-standard.
 
 Work through discovery in this order:
 
@@ -111,7 +139,7 @@ For example, after handling 10–15 jobs from one role, automatically move to
 the next role and/or recommended jobs if the target has not been reached. Give
 one summary only at the end of the run; do not request routine mid-run approval.
 
-## Step 3 — For every job listing found
+## Step 3 — For every listing that passes title-first triage
 
 1. **Read the full JD.** Do not skim — extract: required stack, years of
    experience, location, work mode (onsite/remote/hybrid), salary if shown,
@@ -129,7 +157,10 @@ one summary only at the end of the run; do not request routine mid-run approval.
    `applications.md`. If already logged (in ANY section — applied, external,
    or skipped), do not re-process it. Move to the next listing.
 
-3. **Decide fit** using `RULEBOOK.md` Section 2 criteria:
+3. **Decide fit** using `RULEBOOK.md` Section 2 criteria. Apply its
+   compensation-eligibility hard gate before any apply click, external-form
+   handoff, or submission. If salary appears later in a form, re-run that gate
+   before proceeding; it overrides CTC-answer logic.
    - **Hard skip** → do not apply. Log under "Skipped — Not a Fit" with a
      one-line reason (e.g. "Requires 5+ yrs Java, no stack overlap").
    - **Suspicious/scam signal** → do not apply, do not submit any personal
@@ -149,7 +180,7 @@ one summary only at the end of the run; do not request routine mid-run approval.
      under "External Application Required" together with the JD URL and
      any contact details found (email/phone/name) in the same log entry —
      BUT if the user has toggled "auto-fill external forms" on for this run,
-     proceed to fill and submit it using the same Section 4/5 logic as a
+     proceed to fill and submit it using the same applicable Rulebook logic as a
      native application, and log it as applied.
    - **(c) "Apply" button redirects to the company's own career site /
      ATS (Workday, Greenhouse, Lever, custom portal, etc.)** → same rule as
@@ -170,16 +201,25 @@ one summary only at the end of the run; do not request routine mid-run approval.
 
 5. **Filling a native/authorized application:**
    - Attach the resume from the path the user provided.
-   - Fill every field using `RULEBOOK.md` Section 4 answers.
+   - Fill factual fields from `RULEBOOK.md` Section 1 and generate all
+     non-factual answers using its Section 4 runtime-answering principles.
    - For free-text fields ("Why do you want to join", "Why should we hire
      you", "Describe your best project"), generate a fresh, tailored 2–4
      sentence answer referencing the specific company name/domain and the
-     specific JD requirements — use Section 4 and Section 5 of the rulebook
-     as source material, never submit a generic copy-pasted paragraph with
-     no company-specific reference.
-   - For CTC questions, apply the Section 3 dynamic logic based on the job's
-     city, including its JD budget-cap override. If the JD's stated maximum
-     budget is below the calculated expected CTC, enter the JD maximum exactly.
+     specific JD requirements — use the full JD, Section 2 skills, and the
+     relevant evidence selected from Section 6. Do not default to a particular
+     project or achievement; never submit a generic or copy-pasted paragraph.
+   - For CTC questions, apply `RULEBOOK.md` Section 3 only after the listing
+     has passed its Section 2 compensation-eligibility hard gate. Never use an
+     expected-CTC or budget answer to override that gate.
+   - **Zero-experience safeguard:** Never enter, select, or submit `0` / `0 years`
+     for a skill, technology, tool, domain, or experience question without the
+     user's explicit confirmation for that exact question. Before asking, check
+     the resume and `RULEBOOK.md` for direct or closely related experience
+     (for example, task queues, brokers, and workers may map to Celery,
+     RabbitMQ, BullMQ, or Kafka). If the evidence is unclear, pause, log the
+     job as "Paused — Needs Input," and show the exact question rather than
+     treating uncertainty as zero.
    - If a question appears that is NOT covered anywhere in the rulebook and
      is financial, legal, or identity-sensitive (background checks, criminal
      record, salary proof documents, litigation, medical, disability
@@ -196,10 +236,19 @@ Append an entry to `applications.md` immediately after processing each job
 interrupted. Use the exact section structure and format defined in
 `applications.md` itself (see the template file already in this folder).
 
+Listings rejected during title-first triage are not processed jobs and are the
+only exception: do not log them.
+
 Every entry must include: date, company, role title, JD URL, city, decision
 made, and — critically — any contact info (email/phone/person name) found
 in the JD even if you also applied via the portal, so the user can follow
 up personally regardless of how the agent applied.
+
+For every external portal or Google Form the agent fills, calculate expected
+CTC using `RULEBOOK.md` Section 3 and log the **exact value and unit actually
+entered** (for example, `₹6.5 LPA annually` or `₹54,000/month`). For an
+external application logged for manual completion, log `Not entered — manual
+external application`; never imply that a CTC value was submitted.
 
 ## Step 5 — End of run summary
 
