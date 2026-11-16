@@ -70,12 +70,28 @@ Use **both** job-discovery sources on the selected platform:
 Apply location and experience filters strictly on the platform:
 - **Experience filter (CRITICAL)**: Always apply the 0–2 years filter (Entry level / 1–2 yrs). Do NOT browse unfiltered listings, because applying to 3–5+ year positions degrades the application match score on platforms like Naukri (e.g. dropping experience match to 45%) and causes ATS rejections.
 - **Location filter**: India-wide unless the user restricts a run to specific cities in `RUN_CONFIG.md`.
-- **Recency (CRITICAL for search results)**: Select the platform's newest-first
-  sort order, such as **Date posted: newest**, **Most recent**, or **Sort by:
-  date**. If the platform has no sort control, process the listings with the
-  newest posted date first. Do not intentionally start with older listings.
+- **Posting-age filter (CRITICAL)**: Read `max_job_age_days` from
+  `RUN_CONFIG.md` and select the platform's matching date-posted filter (for
+  example, **Past week** when the configured value is 7). Also select the
+  newest-first sort order. Never search or process listings older than the
+  configured limit merely to reach `max_jobs_to_process`.
+- Apply the posting-age limit to **both search results and recommended jobs**.
+  Treat relative ages such as "30+ days ago" using their stated lower bound.
+  A reposted listing is eligible only when the platform clearly identifies a
+  new posting/reposting date within the configured window.
 
-### Title-first triage (before opening any JD)
+### Card-level pre-filter (before opening any JD)
+
+Check posting age first, then title relevance. Do not open a JD unless both
+checks pass.
+
+- If a listing card shows an age greater than `max_job_age_days`, skip it
+  immediately.
+- If the platform has neither an active posting-date filter nor a visible,
+  verifiable posting date, treat the listing's age as unknown and skip it.
+  Do not assume that a recommendation is recent.
+- Once chronologically sorted results become older than the configured limit,
+  stop paging through that result source and move to the next search or source.
 
 Use the listing card's title and any visible role/skill tags before opening a
 detail page. Open the JD only when the title is a target role, names a primary
@@ -88,8 +104,8 @@ profile (for example, Software Engineer or Solutions Engineer).
   clearly unrelated technology/domain.
 - Apply this title triage especially strictly to recommended jobs. A
   recommendation is not a reason to open a clearly unrelated listing.
-- A title-screened listing is not a processed job: do not open it, do not read
-  its JD, do not count it toward any limit, and do not add it to
+- A listing rejected by either card-level check is not a processed job: do not
+  open it, read its JD, count it toward any limit, or add it to
   `applications.md`.
 - When the title alone cannot reliably rule a role out, open the JD and use the
   normal fit rules. Do not reject a plausibly matching role solely because its
@@ -98,10 +114,11 @@ profile (for example, Software Engineer or Solutions Engineer).
 Work through discovery in this order:
 
 1. Search each configured role keyword and collect the newest listings first.
-   Work through result pages from newest to oldest as needed; do not stop after
-   only the first results page when the actionable-job target has not been met.
-2. Visit the platform's recommended-jobs area during the same run. Process its
-   newest relevant listings, using any available 0–2-year and location filters.
+   Work through result pages from newest to oldest only while listings remain
+   within `max_job_age_days`; stop that search when results cross the age limit.
+2. Visit the platform's recommended-jobs area during the same run. Process only
+   recommendations whose posting age is verified within `max_job_age_days`,
+   using any available age, 0–2-year, and location filters.
 3. Use the same duplicate check for search and recommended listings. A listing
    already logged from either source is a duplicate and must not be processed
    again.
@@ -110,10 +127,9 @@ Work through discovery in this order:
    remaining in either source.
 
 **How `max_jobs_to_process` is counted:** this limit only counts jobs that
-result in **Applied (native)**, **Applied (external, auto-filled)**, or
-**External Application Required** (i.e. jobs where a real application was
-submitted, or a genuine external redirect/form link was found and logged
-for the user to apply manually). It does **NOT** count:
+result in **Applied (native)** or **External Application Required** (i.e. jobs
+where a native application was submitted, or a genuine external redirect/form
+link was found and logged for the user to apply manually). It does **NOT** count:
 - Jobs logged under "Skipped — Not a Fit"
 - Jobs logged under "⚠️ Suspicious — Did Not Apply"
 - Jobs already found as duplicates in `applications.md`
@@ -139,7 +155,7 @@ For example, after handling 10–15 jobs from one role, automatically move to
 the next role and/or recommended jobs if the target has not been reached. Give
 one summary only at the end of the run; do not request routine mid-run approval.
 
-## Step 3 — For every listing that passes title-first triage
+## Step 3 — For every listing that passes the card-level pre-filter
 
 1. **Read the full JD.** Do not skim — extract: required stack, years of
    experience, location, work mode (onsite/remote/hybrid), salary if shown,
@@ -174,32 +190,19 @@ one summary only at the end of the run; do not request routine mid-run approval.
    before clicking anything:   - **(a) Native platform Easy Apply / one-click apply** (e.g. Indeed's own
      apply flow, using the resume already on file) → proceed to fill it out
      directly per Step 5.
-   - **(b) Google Form embedded or linked in the JD** → do NOT submit it
-     yourself unless the user has explicitly authorized form-filling for
-     this run. Default behavior: extract the Google Form link, and log it
-     under "External Application Required" together with the JD URL and
-     any contact details found (email/phone/name) in the same log entry —
-     BUT if the user has toggled "auto-fill external forms" on for this run,
-     proceed to fill and submit it using the same applicable Rulebook logic as a
-     native application, and log it as applied.
+   - **(b) Google Form embedded or linked in the JD** → do not fill or submit
+     it. Extract the form link and log it under "External Application Required"
+     together with the JD URL and any contact details found.
    - **(c) "Apply" button redirects to the company's own career site /
-     ATS (Workday, Greenhouse, Lever, custom portal, etc.)** → same rule as
-     (b): default to logging it as "External Application Required" with the
-     redirect URL, unless auto-fill for external portals is explicitly
-     enabled for this run.
+     ATS (Workday, Greenhouse, Lever, custom portal, etc.)** → do not fill or
+     submit it. Log it as "External Application Required" with the redirect URL
+     and any contact details found.
    - **(d) JD lists only an email address and/or phone number, no apply
      button/form** → log under "Manual Email Application Required" with
-     the email/phone and JD URL, since the agent is not sending emails on
-     the user's behalf unless separately configured with email-sending
-     access. Do not send an email unless the user has explicitly set up
-     and authorized that capability for this run.
+     the email/phone and JD URL. Never draft or send an email on the user's
+     behalf as part of this workflow.
 
-   **Default posture: when in doubt about whether you're allowed to
-   auto-submit an external form, don't. Log it for manual review instead.**
-   The user can always re-run a "fill external forms" pass later once
-   they trust the logs.
-
-5. **Filling a native/authorized application:**
+5. **Filling a native application:**
    - Attach the resume from the path the user provided.
    - Fill factual fields from `RULEBOOK.md` Section 1 and generate all
      non-factual answers using its Section 4 runtime-answering principles.
@@ -236,19 +239,14 @@ Append an entry to `applications.md` immediately after processing each job
 interrupted. Use the exact section structure and format defined in
 `applications.md` itself (see the template file already in this folder).
 
-Listings rejected during title-first triage are not processed jobs and are the
-only exception: do not log them.
+Listings rejected during the card-level posting-age or title check are not
+processed jobs and are the only exception: do not log them.
 
-Every entry must include: date, company, role title, JD URL, city, decision
-made, and — critically — any contact info (email/phone/person name) found
+Every entry must include: processing date, job posting date/age, company, role
+title, JD URL, city, decision made, and — critically — any contact info
+(email/phone/person name) found
 in the JD even if you also applied via the portal, so the user can follow
 up personally regardless of how the agent applied.
-
-For every external portal or Google Form the agent fills, calculate expected
-CTC using `RULEBOOK.md` Section 3 and log the **exact value and unit actually
-entered** (for example, `₹6.5 LPA annually` or `₹54,000/month`). For an
-external application logged for manual completion, log `Not entered — manual
-external application`; never imply that a CTC value was submitted.
 
 ## Step 5 — End of run summary
 

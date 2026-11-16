@@ -9,11 +9,12 @@ Format per entry:
 
 ```
 ### [Date] — [Company] — [Role Title]
+- Posted: <posting date or platform-displayed relative age>
 - JD URL: <link>
 - City: <city>
 - Platform: Indeed / LinkedIn / Company site / etc.
-- Decision: Applied (native) / Applied (external, auto-filled) / External —
-  Manual Required / Manual Email Required / Skipped — Not a Fit /
+- Decision: Applied (native) / External — Manual Required /
+  Manual Email Required / Skipped — Not a Fit /
   Suspicious — Did Not Apply / Paused — Needs Input
 - Contact info found in JD: <email / phone / name, or "None listed">
 - Notes: <caveats — night shift, relocation, CTC quoted, unresolved
@@ -31,16 +32,15 @@ Format per entry:
 ## 🌐 External Application Required (Career Page / Google Form / ATS)
 
 *(Jobs where the platform's "Apply" button redirected elsewhere. The agent
-extracted the link and logged it here instead of auto-submitting, unless
-external auto-fill was explicitly enabled for that run.)*
+extracts the link and logs it here for manual completion; it never fills or
+submits external forms.)*
 
 ---
 
 ## 📧 Manual Email Application Required
 
-*(Jobs where the JD only listed an email/phone and no form — agent does not
-send emails automatically unless configured to. Follow up yourself using
-these contacts.)*
+*(Jobs where the JD only listed an email/phone and no form. The agent never
+drafts or sends these emails; follow up yourself using the logged contacts.)*
 
 ---
 
