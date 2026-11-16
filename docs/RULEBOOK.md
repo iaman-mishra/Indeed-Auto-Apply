@@ -28,6 +28,13 @@ values. If a question or decision is not covered here, stop and ask the user.
 | GitHub | github.com/iaman-mishra |
 | Portfolio | https://iamanmishra.vercel.app/ |
 
+### Resume professional summary
+
+Full Stack Developer with 1+ years of experience shipping AI-powered products
+end to end: React/TypeScript interfaces, FastAPI services, PostgreSQL data
+layers, RAG, multi-agent systems, and real-time Voice AI. Leads backend work on
+an AI education platform and co-built a production Voice AI platform.
+
 ### Education
 
 | Field | Value |
@@ -38,6 +45,16 @@ values. If a question or decision is not covered here, stop and ask the user.
 | 10th percentage | 70% |
 | 12th percentage | 65.8% |
 | 12th certificate available | Yes |
+| Higher secondary school | Sanfort World School, Greater Noida (2020–2021) |
+| Matriculation school | Delhi Scottish School, Greater Noida (2018–2019) |
+
+### Certifications
+
+| Certification | Issuer / format |
+|---|---|
+| AWS Cloud Practitioner Certification | GeeksforGeeks, self-paced |
+| Oracle Cloud Infrastructure 2024 Certified Foundations Associate | Oracle |
+| Cybersecurity Essentials | Cisco |
 
 ### Employment and compensation baseline
 
@@ -51,6 +68,18 @@ values. If a question or decision is not covered here, stop and ask the user.
 | Notice period | 30 days |
 | Immediate joiner | No; can join in 30 days |
 | Reason for change | Looking for greater ownership, exposure to the role’s core technology, and stronger growth opportunities. |
+
+### Resume-backed work highlights
+
+- Lead backend architecture and development for ReviewBytes, including FastAPI
+  services, PostgreSQL data models, REST APIs, and asynchronous workflows.
+- Translate product requirements and client feedback into technical solutions
+  and implementation plans with technical leads.
+- Coordinate frontend-backend integration through Swagger/OpenAPI
+  documentation, review junior developers' code, and resolve application
+  issues to support feature delivery.
+- Optimize PostgreSQL queries, including N+1 bottlenecks, and improve backend
+  performance through caching and asynchronous processing.
 
 ### Work preferences and factual answers
 
@@ -79,13 +108,12 @@ this policy for that run only.
 
 ### Target roles and skill fit
 
-**Primary stack:** Python, FastAPI, JavaScript, TypeScript, React.js, Next.js,
-Node.js, Express.js, NestJS, REST APIs, PostgreSQL, MongoDB, Redis, pgVector,
-Qdrant, SQLAlchemy, Alembic, Prisma, Celery, RabbitMQ, BullMQ, Docker,
-Docker Compose, Linux, AWS (S3, EC2, RDS, ECR), Git/GitHub Actions CI/CD,
-LangChain, LangGraph, RAG, LLM Agents, Multi-Agent Systems, Prompt Engineering,
-MCP, n8n, and OpenAI/Anthropic/Gemini API integration. (Note: Kafka is excluded
-from primary stack).
+**Primary stack:** Python, TypeScript, JavaScript, SQL, React.js, Next.js,
+Redux Toolkit, Material UI, FastAPI, Node.js, Express.js, REST APIs, WebSockets,
+Celery, BullMQ, LangChain, LangGraph, RAG, Multi-Agent Systems, Pipecat, n8n,
+MCP, OpenAI, Claude, Gemini, PostgreSQL, MongoDB, Redis, Qdrant, Docker,
+GitHub Actions CI/CD, AWS (S3, EC2, ECR), Git, GitHub, Postman, and
+Swagger/OpenAPI. (Note: Kafka is excluded from primary stack.)
 
 **Target roles, in order:**
 
@@ -100,8 +128,8 @@ from primary stack).
    experience is an explicit hard requirement
 
 Forward Deployed Engineer roles are a genuine fit because of hands-on
-LangChain, RAG, agent, n8n, and customer-facing implementation work. Do not
-reject them merely because the title was not held before.
+LangChain, RAG, agent, n8n, and client-feedback-informed implementation work.
+Do not reject them merely because the title was not held before.
 
 **Experience range:** Prefer 0–2-year listings. One year over the stated range
 is still eligible. Skip roles requiring 2+ years as mandatory or explicitly
@@ -207,11 +235,15 @@ Do not use a fixed response, a fixed project, or a fixed set of achievements.
   project/repository at runtime from the resume or GitHub. If no specific public
   project URL is verified, use the GitHub profile in Section 1. Never invent a
   repository or deep link.
-- For per-skill experience, derive the answer from verified evidence. Python,
-  React.js, frontend, AI/GenAI/agentic AI, Celery, RabbitMQ, BullMQ, and
-  combined distributed-systems/task-queue/broker questions map to **~1.3 years**.
-  Never round up; check related evidence before treating a product-name variant
-  as different. (Kafka is not part of primary stack).
+- For per-skill experience, derive the answer from verified evidence. The
+  current role provides about **1 year 5 months** of production evidence as of
+  November 2026 for the full-stack work explicitly described there (FastAPI,
+  PostgreSQL, REST APIs, caching, and asynchronous workflows). The resume
+  explicitly supports **1+ years** of AI-powered product experience. Do not
+  assign a more precise duration to a named technology (for example Pipecat,
+  Celery, BullMQ, WebSockets, or Qdrant) unless the resume gives one; pause if
+  a form requires an exact unsupported duration. Never round up or map an
+  unlisted technology to a listed one. (Kafka is not part of the primary stack.)
 - Never enter, select, or submit `0` / `0 years` for an experience question
   without explicit user confirmation for that exact question. If a skill is
   unclear, pause and quote the exact question rather than assuming zero.
@@ -241,24 +273,47 @@ For an Indeed “you do not meet requirements / Apply anyway” screen, choose
 Use these as factual source material only. Select and paraphrase relevant facts
 for the particular JD under Section 4; never submit either entry verbatim.
 
-### ReviewBytes — AI/LLM-heavy roles
+### ReviewBytes — AI medical education platform
 
 Verified deployment: https://ready.reviewbytes.com/
 
-AI-first, gamified medical education platform. Designed an end-to-end
-LLM-powered content pipeline validating and storing 10,000+ structured
-documents in a hierarchical PostgreSQL schema. Built BytesAI, a
-domain-constrained multi-agent chat system using LangChain with RAG retrieval
-through pgVector. Implemented Redis caching with TTL strategies that cut DB
-load 40–60% and improved API response times up to 2x. Fully Dockerized with
-GitHub Actions CI/CD to AWS EC2.
+Tech stack: Next.js, TypeScript, FastAPI, PostgreSQL, LangChain, Qdrant,
+Celery, and n8n. Co-developed full-stack learning and AI assistant features
+with Next.js, React, and FastAPI, including interactive study interfaces, REST
+APIs, and SSE-streamed AI conversations. Built BytesAI, a
+supervisor-orchestrated chatbot with 13 specialized LangChain agents for
+contextual explanations, personalized study planning, question assistance, and
+learning analytics. Developed a recommendation engine using FSRS spaced
+repetition, weak-topic analysis, collaborative filtering, Qdrant semantic
+search, and concurrent candidate retrieval. Automated synchronization of
+30,000+ medical questions from OneNote to PostgreSQL through n8n workflows,
+LLM extraction, hierarchy mapping, and asynchronous Celery/Redis processing.
 
-### Greenroom — full-stack/backend roles
+### Jendesk.ai — real-time Voice AI platform
 
-Social-media platform for athletes. Built and enhanced 10+ production
-full-stack features using React.js and Node.js. Designed a chunk-based video
-upload system using AWS S3 pre-signed URLs and implemented access/refresh-token
-authentication for secure sessions.
+Verified deployment: https://jendesk.ai/
+
+Tech stack: React, TypeScript, FastAPI, Pipecat, Twilio, ElevenLabs, LangGraph,
+Qdrant, and Stripe. Co-developed React/TypeScript dashboards and FastAPI
+services for AI-agent configuration, knowledge-base management, appointment
+scheduling, billing, and analytics. Co-developed real-time voice-AI pipelines
+with Pipecat, Twilio WebSockets, ElevenLabs STT/TTS, OpenAI tool calling, and
+Silero VAD. Implemented tenant-scoped RAG with LangGraph document ingestion,
+Qdrant hybrid dense/sparse retrieval, reciprocal-rank fusion, and cross-encoder
+reranking. Integrated timezone-aware appointment booking and Google Calendar
+synchronization with conflict validation, plus Stripe subscriptions, voice-minute
+billing, and idempotent webhook processing.
+
+### Greenroom — social network for athletes
+
+Tech stack: React, Turborepo, TanStack Query, Node.js, Express, MongoDB, and
+AWS S3. Translated Figma designs into responsive React interfaces in a
+Turborepo-based architecture, integrating Node.js/Express REST APIs and
+frontend state management. Optimized social feeds with virtualized infinite
+scrolling and optimistic UI updates for likes, comments, and bookmarks to
+improve perceived responsiveness and reduce unnecessary rendering. Resolved AWS
+S3 multipart-upload issues for large video files and integrated backend APIs for
+media handling and social-platform functionality.
 
 ---
 

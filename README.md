@@ -57,7 +57,7 @@ AGENT_INSTRUCTIONS.md    Complete job-application operating procedure
 RUN_CONFIG.md            Settings for the next run
 applications.md          Application history and duplicate protection
 docs/RULEBOOK.md         Candidate details, fit rules, and standard answers
-docs/Resume_Aman_Mishra.pdf
+docs/Aman_Full_Stack_AI.pdf
 ```
 
 Before the first run, verify the personal details in `docs/RULEBOOK.md`, confirm
