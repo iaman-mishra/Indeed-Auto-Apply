@@ -150,12 +150,15 @@ location, or market averages.
 | Above the current CTC baseline | Eligible to continue, subject to all other rules. |
 | Not disclosed or unclear | Continue based on the other rules. Re-run this gate immediately if compensation appears later, including in a form. Pause rather than guess if the amount or period cannot be compared. |
 
-*For a fixed salary, use that figure. For a salary range, use its **lower
-bound** so no listed lower-than-current offer can slip through. If only a
-maximum/cap is disclosed, use that cap. This rule overrides all expected-CTC
-and budget-cap logic: a lower disclosed budget is never an acceptable reason
-to apply. Log a rejected listing as `Skipped — Not a Fit` with the salary,
-work mode, and reason.
+*For a fixed salary, use that figure. For a salary range, use its **maximum /
+cap** as the comparable amount. This means a range such as ₹3.6–8 LPA is
+eligible because its maximum exceeds the current CTC baseline; do not reject it
+solely because its lower bound is below the candidate's expected compensation.
+If only a maximum/cap is disclosed, use that cap. This rule overrides all
+expected-CTC and budget-cap logic: use the published maximum when deciding
+whether the role clears the compensation gate, then use the expected-CTC rules
+for any salary answer in the application. Log a rejected listing as
+`Skipped — Not a Fit` with the salary, work mode, and reason.
 
 ### Hard skips
 
