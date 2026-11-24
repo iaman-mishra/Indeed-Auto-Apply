@@ -52,9 +52,7 @@ or other human-verification challenge appears during search, apply, or login:
 
 ## Step 2 — Job Discovery and Processing Order
 
-Use **both** job-discovery sources on the selected platform:
-
-1. **Search results** for every relevant domain/stack keyword from
+Use the platform's **search results** for every relevant domain/stack keyword from
    `RULEBOOK.md` Section 2, e.g.:
 - "Full Stack Developer"
 - "Backend Developer Python"
@@ -63,9 +61,6 @@ Use **both** job-discovery sources on the selected platform:
 - "Node.js Developer"
 - "Forward Deployed Engineer"
 - "AI Solutions Engineer"
-2. **Recommended jobs** (for example, Recommended, Suggested, or Jobs for You)
-   offered by the platform. Treat them as an additional source, not as a
-   replacement for role searches.
 
 Apply location and experience filters strictly on the platform:
 - **Experience filter (CRITICAL)**: Always apply the 0–2 years filter (Entry level / 1–2 yrs). Do NOT browse unfiltered listings, because applying to 3–5+ year positions degrades the application match score on platforms like Naukri (e.g. dropping experience match to 45%) and causes ATS rejections.
@@ -75,7 +70,7 @@ Apply location and experience filters strictly on the platform:
   example, **Past week** when the configured value is 7). Also select the
   newest-first sort order. Never search or process listings older than the
   configured limit merely to reach `max_jobs_to_process`.
-- Apply the posting-age limit to **both search results and recommended jobs**.
+- Apply the posting-age limit to all search-result listings.
   Treat relative ages such as "30+ days ago" using their stated lower bound.
   A reposted listing is eligible only when the platform clearly identifies a
   new posting/reposting date within the configured window.
@@ -89,9 +84,8 @@ checks pass.
   immediately.
 - If the platform has neither an active posting-date filter nor a visible,
   verifiable posting date, treat the listing's age as unknown and skip it.
-  Do not assume that a recommendation is recent.
 - Once chronologically sorted results become older than the configured limit,
-  stop paging through that result source and move to the next search or source.
+  stop paging through that result source and move to the next configured search.
 
 Use the listing card's title and any visible role/skill tags before opening a
 detail page. Open the JD only when the title is a target role, names a primary
@@ -102,8 +96,6 @@ profile (for example, Software Engineer or Solutions Engineer).
   profile: sales, business development, recruiter/HR, marketing, content,
   customer/product support, QA/tester, data entry, accountant, designer, or a
   clearly unrelated technology/domain.
-- Apply this title triage especially strictly to recommended jobs. A
-  recommendation is not a reason to open a clearly unrelated listing.
 - A listing rejected by either card-level check is not a processed job: do not
   open it, read its JD, count it toward any limit, or add it to
   `applications.md`.
@@ -116,15 +108,11 @@ Work through discovery in this order:
 1. Search each configured role keyword and collect the newest listings first.
    Work through result pages from newest to oldest only while listings remain
    within `max_job_age_days`; stop that search when results cross the age limit.
-2. Visit the platform's recommended-jobs area during the same run. Process only
-   recommendations whose posting age is verified within `max_job_age_days`,
-   using any available age, 0–2-year, and location filters.
-3. Use the same duplicate check for search and recommended listings. A listing
-   already logged from either source is a duplicate and must not be processed
-   again.
-4. Alternate back to unprocessed search-result pages or recommendations until
-   the actionable-job target is reached or there are no new eligible listings
-   remaining in either source.
+2. Use the same duplicate check for all search listings. A listing already
+   logged in `applications.md` is a duplicate and must not be processed again.
+3. Continue through unprocessed search-result pages and configured role
+   keywords until the actionable-job target is reached or there are no new
+   eligible listings remaining in the configured searches.
 
 **How `max_jobs_to_process` is counted:** this limit only counts jobs that
 result in **Applied (native)** or **External Application Required** (i.e. jobs
@@ -142,18 +130,18 @@ combined). This means a run may need to look through more than
 genuine matches.
 
 **Continuous-run rule (CRITICAL):** Do not ask the user whether to proceed to
-the next role keyword, search-results page, recommended-job page, or batch of
-listings. Continue independently until one of these terminal conditions occurs:
+the next role keyword, search-results page, or batch of listings. Continue
+independently until one of these terminal conditions occurs:
 
 - `max_jobs_to_process` actionable jobs have been handled;
-- there are no new eligible jobs remaining in both search and recommendations;
+- there are no new eligible jobs remaining in the configured searches;
 - the user tells you to stop; or
 - a defined pause condition applies (manual login, unresolved CAPTCHA,
   sensitive/unanswered question, or another rulebook-required question).
 
 For example, after handling 10–15 jobs from one role, automatically move to
-the next role and/or recommended jobs if the target has not been reached. Give
-one summary only at the end of the run; do not request routine mid-run approval.
+the next configured role search if the target has not been reached. Give one
+summary only at the end of the run; do not request routine mid-run approval.
 
 ## Step 3 — For every listing that passes the card-level pre-filter
 
@@ -166,8 +154,7 @@ one summary only at the end of the run; do not request routine mid-run approval.
    title, employment type, and JD for internship language. If it is an intern,
    internship, apprenticeship, or internship-to-hire role, do not apply. Log
    it under "Skipped — Not a Fit" with the reason "Internship role — do not
-   apply", then move to the next listing. This rule applies equally to search
-   results and recommended jobs.
+   apply", then move to the next listing. This rule applies to search results.
 
 2. **Check for duplicates.** Compare the job's URL/title/company against
    `applications.md`. If already logged (in ANY section — applied, external,
@@ -250,12 +237,12 @@ up personally regardless of how the agent applied.
 
 ## Step 5 — End of run summary
 
-After reaching the actionable-job target, exhausting both search and
-recommended-job sources, or after the user says to stop, give the user a short
-spoken summary: how many jobs were found through search versus recommendations,
-how many were applied to directly, how many were logged as external/manual, how
-many were skipped, and how many paused needing input. Do not restate every
-single job in chat — the detail lives in `applications.md`.
+After reaching the actionable-job target, exhausting the configured search
+sources, or after the user says to stop, give the user a short spoken summary:
+how many jobs were found through search, how many were applied to directly,
+how many were logged as external/manual, how many were skipped, and how many
+paused needing input. Do not restate every single job in chat — the detail
+lives in `applications.md`.
 
 ---
 
