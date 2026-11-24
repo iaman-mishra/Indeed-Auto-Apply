@@ -1,7 +1,7 @@
 # Job Application Agent
 
-Browser-assisted job application workflow for Indeed, Naukri, LinkedIn, and
-other portals. The repository holds the candidate profile, run settings,
+Browser-assisted job application workflow for Indeed, Naukri, LinkedIn,
+Wellfound, and other portals. The repository holds the candidate profile, run settings,
 application history, and agent rules. Browser control is provided by Playwright
 MCP.
 
